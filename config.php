@@ -11,7 +11,7 @@ function dd($var){
    die();
 }
 
-$webroot = "http://SP.test".DIRECTORY_SEPARATOR;
+$webroot = "http://omniverse.test".DIRECTORY_SEPARATOR;
 $docroot = $_SERVER['DOCUMENT_ROOT'];
 $partials = $docroot.DIRECTORY_SEPARATOR.'admin/partials'.DIRECTORY_SEPARATOR;
 $frontend_partials = $docroot.DIRECTORY_SEPARATOR.'frontend/partials'.DIRECTORY_SEPARATOR;
