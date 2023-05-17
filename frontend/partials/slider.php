@@ -1,3 +1,37 @@
+<?php
+$slider1 = ['src' =>'https://picsum.photos/200/300',
+            'title' =>'1st Photo',
+            'caption' =>'This is the first photo',
+            'alt' =>'Slider 1 alter', ];
+$slider2 = ['src' =>'https://picsum.photos/id/870/200/300?grayscale&blur=2',
+            'title' =>'2nd Photo',
+            'caption' =>'This is the second Photo',
+            'alt' =>'Slider 2 alter', ];                      
+$slider3 = ['src' =>'https://picsum.photos/seed/picsum/200/300',
+            'title' =>'3rd photo',
+            'caption' =>'This is the 3rd photo',
+            'alt' =>'Slider 3', ]; 
+$slides=[$slider1,$slider2,$slider3];
+//var_dump($slides);
+//dd($slides);           
+?>
+<?php
+$active = '';
+foreach($slides as $key => $slider):
+    if (0 == $key){
+        $active = 'active';
+    }else {
+        $active = '';
+    }
+?>
+<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?=$key?>" class="<?=$active?>" area-current="true" area-lebel="S;ider 1"></button>
+<?php
+   endforeach;
+?>
+
+
+
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">

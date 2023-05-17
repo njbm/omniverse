@@ -1,0 +1,17 @@
+{
+    "Slider Management":
+    [
+        {
+        "label":"Create a Slide",
+        "url":"url goes here",
+        "icon": "icon goes here"
+        
+        },
+        {
+            "label":"Slide List",
+            "url":"url goes here",
+            "icon": "icon goes here"
+            
+        }
+    ]
+},
