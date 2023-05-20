@@ -10,6 +10,9 @@ function dd($var){
    d($var);
    die();
 }
+function redirect($url){
+    header("location:$url");
+}
 
 $docroot = $_SERVER['DOCUMENT_ROOT'];
 $datasource = $docroot.DIRECTORY_SEPARATOR."datasource".DIRECTORY_SEPARATOR;

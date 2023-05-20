@@ -2,16 +2,16 @@
 <?php
 
 // dd($_GET);
+// store: as json data to json file
 
-$id = "11";
-$uuid = "acsvv";
+$uuid = "";
 $src = $_GET['url'];
 $alt = $_GET['alt'];
 $title = $_GET['title'];
 $caption = $_GET['caption'];
 
 $slide = [
-        "id" => $id,
+        "id" => uniqid(),
         "uuid" => $uuid,
         "src" => $src,
         "alt" => $alt,
