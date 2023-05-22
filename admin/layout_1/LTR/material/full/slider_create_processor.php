@@ -4,7 +4,8 @@
 // dd($_GET);
 // store: as json data to json file
 
-$uuid = "";
+// $id = 11;
+// $uuid = "";
 $src = $_GET['url'];
 $alt = $_GET['alt'];
 $title = $_GET['title'];
@@ -22,6 +23,23 @@ $slide = [
 $dataSlides = file_get_contents($datasource.DIRECTORY_SEPARATOR.'slideritems.json');
 $slides = json_decode($dataSlides);
 
+if(count($slides) > 0){
+    // finding unique id
+    $ids = [];
+    foreach($slides as $aslide){
+        $ids[] = $aslide->id;
+    }
+    sort($ids);
+    $lastIndex = count($ids) - 1;
+    $highestId = $ids[$lastIndex];
+
+    $currentUniqueId = $highestId + 1;
+}else{
+    $currentUniqueId = 1;
+}
+
+$slide['id'] = $currentUniqueId;
+
 $slides[] = (object)$slide;
 $dataSlide = json_encode($slides);
 
@@ -30,5 +48,8 @@ if(file_exists($datasource."slideritems.json")){
 }else{
     echo "File not found";
 }
-   
-dd($result);
+
+if($result){
+    redirect("slider_index.php");
+}    
+d($result);

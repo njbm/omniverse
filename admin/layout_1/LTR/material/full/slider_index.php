@@ -48,6 +48,16 @@
 						
             <!-- Bordered table -->
 				<div class="card">
+				<?php
+					//if(array_key_exists('message', $_GET) && !empty($_GET['message'])):
+					// if(array_key_exists('message', $_SESSION) && !empty($_SESSION['message'])):
+						$message = flush_session('message');
+						if($message):
+					?>
+				<div class="alert alert-success"><?=$message?></div>
+				<?php
+					endif
+					?>
 					<div class="card-header header-elements-inline">
 						<h5 class="card-title">Slides</h5>
 						<div class="header-elements">
@@ -86,12 +96,12 @@
 							<tbody>
 
 <?php
-    foreach($slides as $key=>$slide):
-        // if(0 == $key){
-        //  $active = 'active';
-        // }else{
-        //  $active = '';
-        // }
+   foreach($slides as $key=>$slide):
+        //  if(0 == $key){
+        //   $active = 'active';
+        //  }else{
+        //   $active = '';
+        //  }
 		
      ?> 
 
@@ -104,8 +114,10 @@
 									<td><?=$slide->caption?></td>
 									<td> 
 									<!-- <a href="slider_show.php?slideIndex=<?=$key-1?>">Show</a>   -->
-									<a href="slider_show.php?id=<?=$slide->id?>">Show</a>  
-									<a href="slider_edit.php?id=<?=$slide->id?>">Edit</a>
+									<a href="slider_show.php?id=<?=$slide->id?>">Show</a>
+									|  
+									<form action="slider_edit.php" method="post"><input type="hidden" name="id" value="<?=$slide->id?>"><button>Edit</button></input></form>
+									|
 									<form action="slider_delete.php" method="post">
 									<a href="slider_delete.php?id=<?=$slide->id?>">Delete</a> 
 										<button type="submit">Delete</button>
