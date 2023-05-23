@@ -1,10 +1,37 @@
 <?php include_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'config.php') ?>
 <?php
 
-d($_POST);
+// d($_POST);
+// dd($_FILES);
+$src = null;
+$new_picture = null;
+$old_picture = null;
+$old_picture = $_POST['old_picture'];
+
+if(array_key_exists('picture', $_FILES) && !empty($_FILES['picture']['name'])){
+$filename = $_FILES['picture']['name']; // if you want to keep the filename as it is
+$filename = uniqid()."_".$_FILES['picture']['name']; // if you want to keep the filename as it is
+$target = $_FILES['picture']['tmp_name']; // if you want to keep the filename as it is
+$destination = $uploads.$filename;
+
+    if(upload($target. $destination)){
+        $new_picture = $filename;
+    }
+    if(file_exists($docroot."uploads/" . $old_picture)){
+        unlink($docroot."uploads/" . $old_picture);
+    }else{
+        //d($docroot."uploads/" . $old_picture);
+        dd("file not exists");
+    }
+}
+dd("evvwv");
 // store: as json data to json file
 $id = $_POST['id'];
 $uuid = $_POST['uuid'];
+
+
+$src = $old_picture ?? $old_picture;
+//dd($src);
 $src = $_POST['url'];
 $alt = $_POST['alt'];
 $title = $_POST['title'];

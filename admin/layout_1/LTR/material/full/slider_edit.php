@@ -92,14 +92,14 @@
 										<input name="alt" type="text" class="form-control" placeholder="" value="<?=$slide->alt?>">
 									</div>
 
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
 										<label>URL</label>
-										<input name="url" type="text" class="form-control" placeholder="" value="<?=$slide->src?>">
-									</div>
+										<input name="url" type="text" class="form-control" placeholder="" value="<?//=$slide->src?>">
+									</div> -->
 
                                     <div class="form-group">
 										<label>Upload Picture</label>
-										<input type="password" class="form-control" placeholder="Your strong password">
+										<input type="picture" class="form-control" placeholder="Picture">
 									</div>
 
 									<div class="d-flex justify-content-start align-items-center">

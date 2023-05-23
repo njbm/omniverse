@@ -77,9 +77,8 @@
 					
 						 
 					<a href="slider_create.php">Create</a>  
-						 | Trash (Delete | Restore) | Download XL |
-				    <a href="slider_index_print.php">Download PDF</a> 
-					<a href="slider_index_print.php" target="_blank">Print View</a>	  
+						 | Trash (Delete | Restore) | Download XL | Download PDF | Print View
+				    <a href="slider_index_print.php">Print View</a>	  
 					</div>
 
 					<div class="table-responsive">
@@ -91,7 +90,7 @@
 									<th>Src</th>
 									<th>Alt</th>
 									<th>Caption</th>
-									<th>Action</th>
+									<!-- <th>Action</th> -->
 								</tr>
 							</thead>
 							<tbody>
@@ -110,21 +109,20 @@
 								<tr>
 									<td title="<?=$slide->uuid?>"><?=++$key?></td>
 									<td><?=$slide->title?></td>
-									<td><img src="<?=$webportal.'uploads/'.$slide->src?>" style="width:100px;height:100px"></td>
+									<td><img src="<?=$slide->src?>" style="width:100px;height:100px"></td>
 									<td><?=$slide->alt?></td>
 									<td><?=$slide->caption?></td>
 									<td> 
 									<!-- <a href="slider_show.php?slideIndex=<?//=$key-1?>">Show</a>   -->
-									<a href="slider_show.php?id=<?=$slide->id?>">Show</a>
+									<!-- <a href="slider_show.php?id=<?//=$slide->id?>">Show</a>
 									|  
 									<form action="slider_edit.php" method="post"><input type="hidden" name="id" value="<?=$slide->id?>"><button>Edit</button></input></form>
 									|
 									<form action="slider_delete.php" method="post">
-									<!-- <a href="slider_delete.php?id=<?//=$slide->id?>">Delete</a>  -->
 										<button type="submit">Delete</button>
-										<input type="hidden" name="id" value="<?=$slide->id?>" />
+										<input type="hidden" name="id" value="<?//=$slide->id?>" />
 									</form> 
-									| Activate/InActive | Copy</td>
+									| Activate/InActive | Copy</td> -->
 								</tr>
 <?php
  endforeach

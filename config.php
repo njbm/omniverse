@@ -40,10 +40,15 @@ function redirect($url){
     header("location:$url");
 }
 
+function upload($target, $destination){
+    move_uploaded_file($target, $destination);
+    return true;
+}
+
 $docroot = $_SERVER['DOCUMENT_ROOT'];
 $datasource = $docroot.DIRECTORY_SEPARATOR."datasource".DIRECTORY_SEPARATOR;
 $partials = $docroot.DIRECTORY_SEPARATOR.'partials'.DIRECTORY_SEPARATOR;
-
+$uploads = $docroot.DIRECTORY_SEPARATOR."uploads".DIRECTORY_SEPARATOR;
 
 $portal_partials = $docroot.DIRECTORY_SEPARATOR.'portal'.DIRECTORY_SEPARATOR.'partials'.DIRECTORY_SEPARATOR;
 $webportal = "http://omniverse.test".DIRECTORY_SEPARATOR;
