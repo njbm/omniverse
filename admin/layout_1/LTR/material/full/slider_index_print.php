@@ -2,87 +2,22 @@
 <?php
     $dataSlides = file_get_contents($datasource.DIRECTORY_SEPARATOR.'slideritems.json');
     $slides = json_decode($dataSlides);
-   
-
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
-
-<?php include_once($partials.'head.php') ?>
-
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
 <body>
 
-<?php include_once($partials.'nav.php') ?>
+<button type="button" onclick="print()">Print</button>
+<h1> All Sliders </h1>
 
-
-	<!-- Page content -->
-	<div class="page-content">
-
-	<?php include_once($partials.'sidebar.php') ?>
-
-
-
-		<!-- Main content -->
-		<div class="content-wrapper">
-
-
-		<?php include_once($partials.'pageHeader.php') ?>
-
-
-			<!-- Content area -->
-			<div class="content">
-
-			<?php //include_once($partials.'chart.php') ?>
-
-
-
-				<!-- Dashboard content -->
-				<div class="row">
-					<div class="col-xl-12">
-						
-            <!-- Bordered table -->
-				<div class="card">
-				<?php
-					//if(array_key_exists('message', $_GET) && !empty($_GET['message'])):
-					// if(array_key_exists('message', $_SESSION) && !empty($_SESSION['message'])):
-						$message = flush_session('message');
-						if($message):
-					?>
-				<div class="alert alert-success"><?=$message?></div>
-				<?php
-					endif
-					?>
-					<div class="card-header header-elements-inline">
-						<h5 class="card-title">Slides</h5>
-						<div class="header-elements">
-							<div class="list-icons">
-		                		<a class="list-icons-item" data-action="collapse"></a>
-		                		<a class="list-icons-item" data-action="reload"></a>
-		                		<a class="list-icons-item" data-action="remove"></a>
-		                	</div>
-	                	</div>
-					</div>
-
-					<div class="card-body">
-					<ul>
-					<li class=""><a href="slider_index_grid.php"> Grid View</a></li>
-						 <li class=""><a href="slider_index.php">List View</a></li>
-					</ul>	 
-					
-						 
-					<a href="slider_create.php">Create</a>  
-						 | Trash (Delete | Restore) | Download XL | Download PDF |
-				    <a href="slider_index_print.php">Print View</a>	  
-					</div>
-
-					<div class="table-responsive">
-						<table class="table table-bordered">
+<table border="1">
 							<thead>
 								<tr>
 									<th>#</th>
@@ -90,10 +25,11 @@
 									<th>Src</th>
 									<th>Alt</th>
 									<th>Caption</th>
-									<!-- <th>Action</th> -->
+									
 								</tr>
 							</thead>
 							<tbody>
+
 
 <?php
    foreach($slides as $key=>$slide):
@@ -113,44 +49,12 @@
 									<td><?=$slide->alt?></td>
 									<td><?=$slide->caption?></td>
 									<td> 
-									<!-- <a href="slider_show.php?slideIndex=<?//=$key-1?>">Show</a>   -->
-									<!-- <a href="slider_show.php?id=<?//=$slide->id?>">Show</a>
-									|  
-									<form action="slider_edit.php" method="post"><input type="hidden" name="id" value="<?=$slide->id?>"><button>Edit</button></input></form>
-									|
-									<form action="slider_delete.php" method="post">
-										<button type="submit">Delete</button>
-										<input type="hidden" name="id" value="<?//=$slide->id?>" />
-									</form> 
-									| Activate/InActive | Copy</td> -->
 								</tr>
-<?php
+								<?php
  endforeach
 ?>
 							</tbody>
 						</table>
-					</div>
-				</div>
-				<!-- /bordered table -->
-
-
-
-					</div>
-				</div>
-				<!-- /dashboard content -->
-
-			</div>
-			<!-- /content area -->
-
-
-			<?php include_once($partials.'footer.php') ?>
-
-
-		</div>
-		<!-- /main content -->
-
-	</div>
-	<!-- /page content -->
-
 </body>
 </html>
+

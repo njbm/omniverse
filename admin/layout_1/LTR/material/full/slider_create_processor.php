@@ -1,71 +1,35 @@
 <?php include_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'config.php') ?>
 <?php
+use \BITM\SEIP12\Slider;
+use \BITM\SEIP12\Utility\Utility;
+use Intervention\Image\ImageManager;
 
-d($_GET);
-d($_POST);
-//dd($_FILES);
+$manager = new ImageManager(['driver' => 'imagick']);
 
-$filename = $_FILES['picture']['name']; // if you want to keep the name as is
-$filename = uniqid()."_".$_FILES['picture']['name']; // if you want to keep the name as is
-$target = $_FILES['picture']['tmp_name'];
-$destination = $uploads.$filename;
+$filename = uniqid()."_".$_FILES['picture']['name'];
 
-$src = null;
-if(upload($target, $destination)){
+try{
+    $img = $manager->make($_FILES['picture']['tmp_name'])
+                    ->resize(30, 20)
+                    ->save($uploads.$filename);
     $src = $filename ;
-}
-// store: as json data to json file
-
-// $id = 11;
-// $uuid = "";
-// $src = $_GET['url'];
-$alt = $_POST['alt'];
-$title = $_POST['title'];
-$caption = $_POST['caption'];
-
-$slide = [
-        // "id" => uniqid(),
-        // "uuid" => $uuid,
-        "uuid" => uniqid(),
-        "src" => $src,
-        "alt" => $alt,
-        "title" => $title,
-        "caption" => $caption,
-];
-// dd($slide);
-
-$curentUniqueId = null;
-
-$dataSlides = file_get_contents($datasource.DIRECTORY_SEPARATOR.'slideritems.json');
-$slides = json_decode($dataSlides);
-
-if(count($slides) > 0){
-    // finding unique id
-    $ids = [];
-    foreach($slides as $aslide){
-        $ids[] = $aslide->id;
-    }
-    sort($ids);
-    $lastIndex = count($ids) - 1;
-    $highestId = $ids[$lastIndex];
-
-    $currentUniqueId = $highestId + 1;
-}else{
-    $currentUniqueId = 1;
+}catch(Intervention\Image\Exception\NotWritableException $e){
+    dd($e);
+}catch(Exception $e){
+    dd($e);
 }
 
-$slide['id'] = $currentUniqueId;
+$slider = new Slider();
 
-$slides[] = (object)$slide;
-$dataSlide = json_encode($slides);
+$slider->alt = Utility::sanitize($_POST['alt']);
+$slider->title = Utility::sanitize($_POST['title']);
+$slider->caption = Utility::sanitize($_POST['caption']);
+$slider->src = $src;
 
-if(file_exists($datasource."slideritems.json")){
-    $result = file_put_contents($datasource. "slideritems.json",$dataSlide); 
-}else{
-    echo "File not found";
-}
+$result = $slider->store($slider);
 
 if($result){
     redirect("slider_index.php");
-}    
-d($result);
+}else{
+    echo "Data is not stored";
+}

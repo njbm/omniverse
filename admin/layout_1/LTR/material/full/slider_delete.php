@@ -21,7 +21,8 @@
 	 * unset($slides[$key]);
 	 *  
 	 * */ 
-	unset($slides[$key]);
+	 unset($slides[$key]);
+
 	//reindexing the array
     $slides = array_values($slides);
 	$data_slides = json_encode($slides);

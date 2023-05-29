@@ -52,5 +52,7 @@ $uploads = $docroot.DIRECTORY_SEPARATOR."uploads".DIRECTORY_SEPARATOR;
 
 $portal_partials = $docroot.DIRECTORY_SEPARATOR.'portal'.DIRECTORY_SEPARATOR.'partials'.DIRECTORY_SEPARATOR;
 $webportal = "http://omniverse.test".DIRECTORY_SEPARATOR;
+$uploaded_assets = $webportal."uploads".DIRECTORY_SEPARATOR;
+
 
 $datasource_driver = "JSON";

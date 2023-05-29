@@ -1,32 +1,22 @@
 <?php include_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'config.php') ?>
 <?php
-   /** collect the intended ID */
-   $id = $_POST['id'];
-    
-     /** communicate with datasource and get data for that id */
-    $dataSlides = file_get_contents($datasource.DIRECTORY_SEPARATOR.'slideritems.json');
-    $slides = json_decode($dataSlides);
-    
-    $slide = null;
-    foreach($slides as $slide){
-        if($slide->id == $id){
-           
-            break;
-        }
-    }
-	
-    
-    
-     d($slide);
-    // $slideIndex = $_GET['slideIndex'];
-    // $slide = $slides[$slideIndex];
 
-    /**
-     * @TODO
-     * handle edge case
-     * security: untrust user input
-     */
+   use \BITM\SEIP12\Slider;
+   use \BITM\SEIP12\Utility\Validator;
+   use \BITM\SEIP12\Utility\Utility;
+	
+   $id = Utility::sanitize($_GET['id']);
+   
+   if(!Validator::empty($id)){
+	   $slider = new Slider();
+	   $slide = $slider->edit($id);
+	   
+   }else{ // REfactor using Session based message
+	   dd("Id cannot be null or empty");
+   }
+	
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,27 +26,20 @@
 
 <?php include_once($partials.'nav.php') ?>
 
-
 	<!-- Page content -->
 	<div class="page-content">
 
 	<?php include_once($partials.'sidebar.php') ?>
 
-
-
 		<!-- Main content -->
 		<div class="content-wrapper">
 
-
 		<?php include_once($partials.'pageHeader.php') ?>
-
 
 			<!-- Content area -->
 			<div class="content">
 
 			<?php //include_once($partials.'chart.php') ?>
-
-
 
 				<!-- Dashboard content -->
 				<div class="row">
@@ -74,7 +57,7 @@
 							</div>
 
 			                <div class="card-body">
-			                	<form action="slider_edit_processor.php" method="post" >
+			                	<form action="slider_edit_processor.php" method="post" enctype="multipart/form-data">
                                         <input name="id" type="hidden" class="form-control"  value="<?=$slide->id?>" />
 										<input name="uuid" type="hidden" class="form-control"  value="<?=$slide->uuid?>" />
 									<div class="form-group">
@@ -99,8 +82,11 @@
 
                                     <div class="form-group">
 										<label>Upload Picture</label>
-										<input type="picture" class="form-control" placeholder="Picture">
+										<input name="picture" type="file" class="form-control" placeholder="Choose a Picture">
+										<img src="<?=$webportal."uploads/".$slide->src?>" style="width:100px;height:100px">
+										<input name="old_picture" type="text" class="form-control"  value="<?=$slide->src?>" />
 									</div>
+
 
 									<div class="d-flex justify-content-start align-items-center">
 										<button type="submit" class="btn btn-light legitRipple">Cancel</button>

@@ -1,15 +1,11 @@
 <?php include_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'config.php') ?>
 <?php
-    $dataSlides = file_get_contents($datasource.DIRECTORY_SEPARATOR.'slideritems.json');
-    $slides = json_decode($dataSlides);
-   
+ use \BITM\SEIP12\Slider;
 
+	$slider = new Slider();
+	$slides = $slider->index();
+	// dd($slider);
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -77,8 +73,12 @@
 					
 						 
 					<a href="slider_create.php">Create</a>  
-						 | Trash (Delete | Restore) | Download XL |
-				    <a href="">Download PDF</a> |
+					| Trash (Delete | Restore) 
+					|
+					<a href="slider_download_xl.php">Download XL </a> 
+				    |
+				    <a href="slider_download_pdf.php">Download PDF</a> 
+					|
 					<a href="slider_index_print.php" target="_blank">Print View</a>	  
 					</div>
 
@@ -98,32 +98,29 @@
 
 <?php
    foreach($slides as $key=>$slide):
-        //  if(0 == $key){
-        //   $active = 'active';
-        //  }else{
-        //   $active = '';
-        //  }
-		
+      
      ?> 
 
 
 								<tr>
 									<td title="<?=$slide->uuid?>"><?=++$key?></td>
 									<td><?=$slide->title?></td>
-									<td><img src="<?=$webportal.'uploads/'.$slide->src?>" style="width:100px;height:100px"></td>
+									<!-- <td><img src="<?//=$slide->src?>" style="width:100px;height:100px"></td> -->
+									<td><img src="<?=$webportal."uploads/".$slide->src?>" style="width:100px;height:100px"></td>
 									<td><?=$slide->alt?></td>
 									<td><?=$slide->caption?></td>
 									<td> 
 									<!-- <a href="slider_show.php?slideIndex=<?//=$key-1?>">Show</a>   -->
 									<a href="slider_show.php?id=<?=$slide->id?>">Show</a>
 									|  
-									<form action="slider_edit.php" method="post"><input type="hidden" name="id" value="<?=$slide->id?>"><button>Edit</button></input></form>
-									|
+									<a href="slider_edit.php?id=<?=$slide->id?>">Edit</a>
+									|									|
 									<form action="slider_delete.php" method="post">
-									<!-- <a href="slider_delete.php?id=<?//=$slide->id?>">Delete</a>  -->
-										<button type="submit">Delete</button>
+									<!-- <a href="slider_delete.php?id=<?=$slide->id?>" >Delete</a>  -->
+										<button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
 										<input type="hidden" name="id" value="<?=$slide->id?>" />
-									</form> 
+									</form>
+ 
 									| Activate/InActive | Copy</td>
 								</tr>
 <?php

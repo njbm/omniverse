@@ -1,5 +1,5 @@
 <?php include_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'config.php') ?>
-
+<?php // phpinfo() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +36,7 @@
 					<div class="col-xl-12">
                     <div class="card">
 							<div class="card-header header-elements-inline">
-				                <h6 class="card-title">Create a Slide</h6>
+				                <h6 class="card-title">Create a Slide for the Slider</h6>
 								<div class="header-elements">
 									<div class="list-icons">
 				                		<a class="list-icons-item" data-action="collapse"></a>
@@ -47,32 +47,31 @@
 							</div>
 
 			                <div class="card-body">
-			                	<form action="slider_create_processor.php" method="post" enctype="multipart/form-data">
+			                	<form action="slider_create_processor.php" method="post" enctype="multipart/form-data" >
 									<div class="form-group">
 										<label>Title</label>
-										<input name="title" type="text" class="form-control" placeholder="Your name">
+										<input name="title" type="text" class="form-control" placeholder="Eugene Kopyov">
 									</div>
 
 									<div class="form-group">
 										<label>Caption</label>
-										<input name="caption" type="text" class="form-control" placeholder="Your caption">
+										<input name="caption" type="text" class="form-control" placeholder="Your strong password">
 									</div>
 
 									<div class="form-group">
 										<label>Alt</label>
-										<input name="alt" type="text" class="form-control" placeholder="Your alt">
+										<input name="alt" type="text" class="form-control" placeholder="Your strong password">
 									</div>
 
                                     <!-- <div class="form-group">
 										<label>URL</label>
-										<input name="url" type="text" class="form-control" placeholder="Your url">
+										<input name="url" type="text" class="form-control" placeholder="Your strong password">
 									</div> -->
 
                                     <div class="form-group">
 										<label>Upload Picture</label>
-										<!-- <input name="picture" type="file" class="form-control" placeholder="Upload Picture"> -->
 										<input type="file" name="picture" class="form-control" placeholder="Choose a file">
-										<!-- <input type="file" name="document" class="form-control" placeholder="Choose a file"> -->
+										<input type="file" name="document" class="form-control" placeholder="Choose a file">
 									</div>
 
 									<div class="d-flex justify-content-start align-items-center">
