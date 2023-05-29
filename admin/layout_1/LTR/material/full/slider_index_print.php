@@ -77,7 +77,7 @@
 					
 						 
 					<a href="slider_create.php">Create</a>  
-						 | Trash (Delete | Restore) | Download XL | Download PDF | Print View
+						 | Trash (Delete | Restore) | Download XL | Download PDF |
 				    <a href="slider_index_print.php">Print View</a>	  
 					</div>
 
@@ -109,7 +109,7 @@
 								<tr>
 									<td title="<?=$slide->uuid?>"><?=++$key?></td>
 									<td><?=$slide->title?></td>
-									<td><img src="<?=$slide->src?>" style="width:100px;height:100px"></td>
+									<td><img src="<?=$webportal.'uploads/'.$slide->src?>" style="width:100px;height:100px"></td>
 									<td><?=$slide->alt?></td>
 									<td><?=$slide->caption?></td>
 									<td> 

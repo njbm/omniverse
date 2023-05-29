@@ -78,7 +78,7 @@
 						 
 					<a href="slider_create.php">Create</a>  
 						 | Trash (Delete | Restore) | Download XL |
-				    <a href="slider_index_print.php">Download PDF</a> 
+				    <a href="">Download PDF</a> |
 					<a href="slider_index_print.php" target="_blank">Print View</a>	  
 					</div>
 
