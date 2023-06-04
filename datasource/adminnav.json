@@ -1,0 +1,49 @@
+
+
+{
+    "items": [
+      {
+        "title": "Home",
+        "href": "/"
+      },
+      {
+        "title": "About",
+        "href": "/about"
+      },
+      {
+        "title": "Contact",
+        "href": "/contact"
+      },
+      {
+        "title": "Categories",
+        "items": [
+          {
+            "title": "Technology",
+            "href": "/categories/technology"
+          },
+          {
+            "title": "Business",
+            "href": "/categories/business"
+          },
+          {
+            "title": "Entertainment",
+            "href": "/categories/entertainment"
+          }
+        ]
+      },
+      {
+        "title": "Recent Posts",
+        "items": [
+          {
+            "title": "This is a recent post",
+            "href": "/posts/this-is-a-recent-post"
+          },
+          {
+            "title": "This is another recent post",
+            "href": "/posts/this-is-another-recent-post"
+          }
+        ]
+      }
+    ]
+  }
+  

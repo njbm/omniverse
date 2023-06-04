@@ -25,8 +25,11 @@
 			</ul>
 
 			<span class="navbar-text ml-md-3">
-				<span class="badge badge-mark border-orange-300 mr-2"></span>
-				Morning, Victoria!
+				
+				<a href="https://github.com/njbm" target="blank" class="d-block text-default text-center ripple-dark rounded p-1">
+				<span><i class="icon-github4 icon-1x"></i></span>				
+						<span>  Jaber Masud</span>
+					</a>
 			</span>
 
 			<ul class="navbar-nav ml-md-auto">

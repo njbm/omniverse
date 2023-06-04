@@ -2,55 +2,39 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<?php include_once($partials.'head.php') ?>
+	<?php include_once($partials.'head.php') ?> <!--head-->
 
 <body>
+<?php include_once($partials.'nav.php') ?> <!--nav-->
 
-<?php include_once($partials.'nav.php') ?>
+<div class="page-content">	<!--Start Page content -->
 
+	<?php include_once($partials.'sidebar.php') ?>	<!--side bar-->
 
-	<!-- Page content -->
-	<div class="page-content">
+	<div class="content-wrapper">	<!-- Main content -->
+		<?php include_once($partials.'pageHeader.php') ?>	<!--page header-->
 
-	<?php include_once($partials.'sidebar.php') ?>
-
-
-
-		<!-- Main content -->
-		<div class="content-wrapper">
-
-
-		<?php include_once($partials.'pageHeader.php') ?>
+		<!-- Content area -->
+		<div class="content">
+		<?php //include_once($partials.'chart.php') ?>
 
 
-			<!-- Content area -->
-			<div class="content">
+<!-- Dashboard content -->
 
-			<?php //include_once($partials.'chart.php') ?>
-
-
-
-				<!-- Dashboard content -->
-				<div class="row">
-					<div class="col-xl-12">
-						Content goes Here
-					</div>
-				</div>
-				<!-- /dashboard content -->
-
-			</div>
-			<!-- /content area -->
-
-
-			<?php include_once($partials.'footer.php') ?>
-
-
-		</div>
-		<!-- /main content -->
-
+<div class="row">
+	<div class="col-xl-12">
+		Content goes Here
 	</div>
-	<!-- /page content -->
+</div>
 
+<!-- /dashboard content -->
+
+
+		</div>	<!-- /content area -->
+		
+		<?php include_once($partials.'footer.php') ?>
+	</div>	<!-- /main content -->
+	
+</div>	<!-- /page content -->	
 </body>
 </html>

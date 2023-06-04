@@ -23,7 +23,7 @@
 
     <!-- Controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+        <i class="bi bi-chevron-left"></i>
     </a>
     <a class="right carousel-control" href="#myCarousel" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>

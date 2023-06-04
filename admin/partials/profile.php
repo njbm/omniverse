@@ -1,12 +1,12 @@
 				<!-- User menu -->
-				<div class="sidebar-user-material" style="background-color: gray;">
+				<div class="sidebar-user-material" style="background-color: black;">
 					<div class="sidebar-user-material-body">
 						<div class="card-body text-center">
 							<a href="#">
-								<img src="global_assets/images/placeholders/placeholder.jpg" class="img-fluid rounded-circle shadow-1 mb-3" width="80" height="80" alt="">
+								<img src="http://bit.ly/42OMrYr" class="img-fluid rounded-circle shadow-1 mb-3" width="80" height="80" alt="">
 							</a>
 							<h6 class="mb-0 text-white text-shadow-dark">Jaber Masud</h6>
-							<span class="font-size-sm text-white text-shadow-dark">Santa Ana, CA</span>
+							<span class="font-size-sm text-white text-shadow-dark">Software Developer</span>
 						</div>
 
 						<div class="sidebar-user-material-footer">

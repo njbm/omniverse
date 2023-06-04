@@ -1,0 +1,63 @@
+
+[
+  {
+    "name": "Home",
+    "url": "product_index.php",
+    "submenu": [
+      {
+        "name": "About",
+        "url": "about.php"
+      },
+      {
+        "name": "Contact",
+        "url": "contact.php"
+      }
+    ]
+  },
+  {
+    "name": "Slider Managementme",
+    "url": "slider_index.php",
+    "submenu": [
+      
+      {
+        "name": "Create Slider ",
+        "url": "slider_create.php"
+      },
+      {
+        "name": "Slider List View",
+        "url": "slider_index.php"
+      },
+      {
+        "name": "Slider Grid View",
+        "url": "slider_index_grid.php"
+      }
+    ]
+  },
+  {
+    "name": "Product Management",
+    "url": "product_index.php",
+    "submenu": [
+      
+      {
+        "name": "Create Product ",
+        "url": "product_create.php"
+      },
+      {
+        "name": "Products List view",
+        "url": "product_index.php"
+      },
+      {
+        "name": "Product Grid view",
+        "url": "product_index_grid.php"
+      }
+    ]
+  },
+  {
+    "name": "Products",
+    "url": "product_index.php"
+  },
+  {
+    "name": "Services",
+    "url": "services.php"
+  }
+]
