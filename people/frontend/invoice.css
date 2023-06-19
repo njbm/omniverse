@@ -1,0 +1,11 @@
+.invoice-container{
+    margin: 15px;
+    padding: 70px !important;
+    max-width: 850px ;
+     background-color: #fff ;
+    border :1px solid #ccc ;
+    border-radius:6px;
+}
+.row p{
+  padding-left: 129px;
+}

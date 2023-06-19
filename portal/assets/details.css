@@ -1,0 +1,124 @@
+@link
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'poppins',sans-serif ;
+    }
+.flex-box{
+    display: flex;
+    width: 1000px;
+    margin: 20px auto ;
+}
+.left{
+    
+    width: 50%;
+
+}
+.big-img{
+    width: 400px;
+}
+.big-img img{
+    width: inherit;
+}
+.image{
+    display: flex;
+    justify-content: space-between;
+    width:50%;
+    margin-top: 15px; 
+    padding-left: 50px;
+}
+.small-img{
+    width: 100px;
+
+}
+
+.small-img img{
+    height: 100%;
+    width:inherit ;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+.small-img:hover{
+    transform: scale(1.2);
+
+}
+.right{
+    
+}
+.url{
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(0, 47, 255);
+}
+.pname{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+.rating i{
+    color: rgb(255,136,0);
+
+}
+.price{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+.color{
+
+    display: flex;
+    align-items: center;
+}
+.pcolor{
+    width: 60px;
+    height: 20px;
+    border: 1px solid rgb(243, 106, 14);
+    color: black;
+    margin: 0 10px;
+}
+.color p{
+    font-size:20px;
+    font-weight: 600 ;
+    text-align:start;
+}
+.pcolor .active{
+    border-width: 1.5px;
+    color: rgb(243, 106, 14);
+    font-weight: 500;
+}
+.Quantity{
+    display: flex;
+}
+.Quantity p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.Quantity input{
+    width: 40px;
+    height: 20px;
+    font-size:17px ;
+    text-align: center;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.btn-box{
+    display: flex;
+    margin: 20px;
+    margin-left: 50px;
+}
+.btn-box button{
+    font-size: 18px;
+    padding: 8px 25px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+.cart-btn{
+    background-color:rgb(243, 106, 14) ;
+    padding-left: 20px;
+}

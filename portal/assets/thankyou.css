@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h2{
+    color: white;
+    font-size: 80px;
+    text-align: center;
+}
+.image img{
+
+  padding-left: 200px;
+  height: auto; 
+
+}
+.thankyou  img{
+    width: 100px;
+} 
