@@ -298,6 +298,7 @@
       </div>
     </div>
   </div>
+</div>
 
 
 <!-- others card -->
@@ -502,7 +503,6 @@
      </div>
   </div>
 </div>
-
+<?php include_once($portal_partials.'footer.php') ?>
 
 </body>
-<?php include_once($portal_partials.'footer.php') ?>
